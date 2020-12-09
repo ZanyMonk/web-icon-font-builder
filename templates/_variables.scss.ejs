@@ -1,0 +1,15 @@
+<% for (const name in codepoints) { _%>
+$<%= config.prefix %><%= name %>: "\\<%= codepoints[name][0].charCodeAt(0).toString(16) %>";
+<% } %>
+
+@font-face {
+  font-family: '<%= config.fontName %>';
+  src:  url('<%= config.fontsPath + config.fontName + '.eot?' + nonce %>');
+  src:  url('<%= config.fontsPath + config.fontName + '.eot?' + nonce + '#iefix' %>') format('embedded-opentype'),
+        url('<%= config.fontsPath + config.fontName + '.ttf?' + nonce %>') format('truetype'),
+        url('<%= config.fontsPath + config.fontName + '.woff?' + nonce %>') format('woff'),
+        url('<%= config.fontsPath + config.fontName + '.woff2?' + nonce %>') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
